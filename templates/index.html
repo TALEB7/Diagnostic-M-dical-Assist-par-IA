@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Diagnosis Assistant</title>
+    <link href="{{ url_for('static', filename='index.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+            </div>
+            <h1 class="title">Medical Diagnoser</h1>
+            <p class="subtitle">AI-Powered Health Assistant</p>
+        </div>
+        
+        <div class="form-container">
+            <div class="info-card">
+                <i class="fas fa-info-circle"></i>
+                <p>Describe your symptoms in detail for a more accurate diagnosis</p>
+            </div>
+            
+            <form action="/predict" method="post">
+                <div class="input-wrapper">
+                    <i class="fas fa-stethoscope input-icon"></i>
+                    <textarea name="patient_problem" class="input-field" placeholder="Enter your symptoms here... (e.g., headache, fever, fatigue)" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-search-plus"></i>
+                    Get Diagnosis
+                </button>
+            </form>
+        </div>
+        
+        <div class="features">
+            <div class="feature-item">
+                <i class="fas fa-brain"></i>
+                <span>AI Analysis</span>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-pills"></i>
+                <span>Prescription</span>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-clock"></i>
+                <span>Instant Results</span>
+            </div>
+        </div>
+        
+        <footer class="footer">
+            <p><i class="fas fa-exclamation-triangle"></i> Disclaimer: This is for informational purposes only. Always consult a healthcare professional.</p>
+        </footer>
+    </div>
+</body>
+</html>
